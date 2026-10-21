@@ -69,7 +69,7 @@ function icon(type) {
     save: '<path d="M12 21s-8-4.3-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 6.7-8 11-8 11Z"/><path d="M12 8v7m-3.5-3.5h7"/>',
     bolt: '<path d="m13 2-9 12h7l-1 8 10-13h-7l1-7z"/>',
   };
-  return `<svg viewBox="0 0 24 24" aria-hidden="true">${paths[type] || paths.check}</svg>`;
+  return `<svg data-icon="${type}" viewBox="0 0 24 24" aria-hidden="true">${paths[type] || paths.check}</svg>`;
 }
 
 function logo() {
@@ -116,7 +116,7 @@ function renderWorkout(key) {
   app.innerHTML = `<main class="app-shell" id="inicio">${logo()}
     <div class="session-header"><button type="button" class="back-button" data-action="home">${icon('back')} Voltar aos treinos</button><span class="session-badge">${icon(key === 'A' ? 'muscle' : 'dumbbell')} Treino ${key}</span></div>
     <section class="session-titlebar"><div><span class="eyebrow">${key === 'A' ? 'INFERIORES' : 'SUPERIORES'}</span><h1>Treino <span>${key}</span></h1></div><span class="session-summary">${icon('timer')}<span>${exercises.length} exercícios</span><span aria-hidden="true">·</span><span>${info.totalSets} séries</span></span></section>
-    <section class="session-overview" aria-label="Progresso do treino"><div class="session-overview-copy"><span class="overview-ring">${icon(isDone ? 'check' : 'dumbbell')}</span><span><strong>${isDone ? 'Treino concluído. Você arrasou!' : 'No seu ritmo, uma série de cada vez.'}</strong><span>${focus}</span></span></div><span class="session-count"><strong>${info.completedSets}</strong> <span>/ ${info.totalSets} séries</span></span></section>
+    <section class="session-overview" aria-label="Progresso do treino"><div class="session-overview-copy"><span class="overview-ring">${icon(isDone ? 'check' : 'bolt')}</span><span><strong>${isDone ? 'Treino concluído. Você arrasou!' : 'No seu ritmo, uma série de cada vez.'}</strong><span>${focus}</span></span></div><span class="session-count"><strong>${info.completedSets}</strong> <span>/ ${info.totalSets} séries</span></span></section>
     <div class="progress-track" style="margin:0 0 16px"><div class="progress-fill" style="width:${(info.completedSets / info.totalSets) * 100}%"></div></div>
     <section class="exercise-list" aria-label="Exercícios do treino">${exercises.map((exercise, index) => exerciseCard(key, exercise, index, info.values[index])).join('')}</section>
     <p class="session-footer">${icon('save')} Progresso salvo automaticamente durante o dia</p>
