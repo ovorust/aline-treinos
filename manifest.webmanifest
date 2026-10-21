@@ -1,0 +1,13 @@
+{
+  "name": "Ritmo — treino da Aline",
+  "short_name": "Ritmo",
+  "description": "Seu espaço de treino, no seu ritmo.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111114",
+  "theme_color": "#111114",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
