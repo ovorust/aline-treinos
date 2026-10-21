@@ -43,13 +43,13 @@ function persistProgress() {
   try { localStorage.setItem(KEY, JSON.stringify(progress)); } catch { /* App continues if the browser blocks storage. */ }
 }
 
-function freshWorkout() {
-  return EXERCISES[currentWorkout].map(() => 0);
+function freshWorkout(key) {
+  return EXERCISES[key].map(() => 0);
 }
 
 function counts(key) {
   const saved = progress.workouts[key];
-  const values = saved && saved.length === EXERCISES[key].length ? saved : freshWorkout();
+  const values = saved && saved.length === EXERCISES[key].length ? saved : freshWorkout(key);
   const completedExercises = values.reduce((sum, sets, index) => sum + (sets >= EXERCISES[key][index].sets ? 1 : 0), 0);
   const completedSets = values.reduce((sum, sets) => sum + Math.max(0, Number(sets) || 0), 0);
   const totalSets = EXERCISES[key].reduce((sum, item) => sum + item.sets, 0);
