@@ -105,6 +105,10 @@ h1, h2, h3, p { margin-top: 0; }
 .session-overview-copy strong, .session-overview-copy span { display: block; }
 .session-overview-copy strong { margin-bottom: 4px; font-size: 12px; font-weight: 600; }
 .session-overview-copy span { color: var(--muted); font-size: 10px; }
+.session-overview-copy { gap: 12px; }
+.session-overview-copy .overview-icon { display: grid; width: 34px; height: 34px; flex: 0 0 auto; place-items: center; border: 1px solid rgba(214,64,72,.25); border-radius: 11px; background: var(--accent-soft); color: #e77478; }
+.session-overview-copy .overview-icon svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.session-overview-copy .overview-text { min-width: 0; }
 .session-count { color: #d9d6dd; font-size: 12px; font-weight: 600; }
 .session-count span { color: var(--muted); font-weight: 400; }
 .exercise-list { display: grid; gap: 10px; }
@@ -209,6 +213,9 @@ h1, h2, h3, p { margin-top: 0; }
   .session-overview { padding: 12px; }
   .session-overview-copy strong { font-size: 11px; }
   .session-overview-copy span { font-size: 9px; }
+  .session-overview-copy { gap: 10px; }
+  .session-overview-copy .overview-icon { width: 30px; height: 30px; border-radius: 9px; }
+  .session-overview-copy .overview-icon svg { width: 15px; height: 15px; }
   .session-count { font-size: 10px; }
   .exercise-list { gap: 9px; }
   .exercise-card { border-radius: 15px; }
